@@ -21,17 +21,17 @@ class { 'ffnord::params':
 # und https://github.com/freifunk/icvpn-meta/blob/master/nord
 ffnord::mesh { 'mesh_ffnord':
     mesh_name => "Freifunk Plön Ostholstein"
-  , mesh_code => "ffnord-ploh"
+  , mesh_code => "ffnord-oh"
   , mesh_as => "65187"
   , mesh_mac  => "de:dd:be:ef:ff:00"
   , vpn_mac  => "de:dd:be:ff:ff:00"
-  , mesh_ipv6 => "fd42:eb49:c0b5:4242::fe01/64"
+  , mesh_ipv6 => "fd42:eb49:c0b5:4242::fe00/64"
   , mesh_ipv4  => "10.187.120.1/17"
   , range_ipv4 => "10.187.0.0/16"
   , mesh_mtu     => "1312"
   , mesh_peerings    => "/opt/nord-ploh-puppet-config/mesh_peerings.yaml"
   
-  , fastd_secret => "/root/nord-ploh-gw00-fastd-secret.key"
+  , fastd_secret => "/opt/nord-ploh-gw00-fastd-secret.key"
   , fastd_port   => 10050
   , fastd_peers_git => 'https://github.com/Freifunk-PLOH/nord-ploh-gw-peers.git'
   , fastd_verify=> 'true'                               # set this to 'true' to accept all fastd keys without verification
@@ -48,7 +48,7 @@ class {'ffnord::vpn::provider::hideio':
 }
 
 ffnord::named::zone {
-  "nord": zone_git => "https://github.com/Freifunk-PLOH/nord-ploh-zone.git", exclude_meta => 'nord';
+  "nord": zone_git => "https://github.com/Freifunk-PLOH/nord-iz-zone", exclude_meta => 'nord';
 }
 
 class {
