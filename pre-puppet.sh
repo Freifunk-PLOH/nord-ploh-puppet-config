@@ -3,13 +3,13 @@
 # adapt IPV6 first!
 # do dpkg-reconfigure tzdata
 
-NAME="Freifunk Kreis Steinburg"
+NAME="Freifunk Plön Ostholstein"
 OPERATOR="Freifunk Nord"
 CHANGELOG="https://osticket.freifunknord.de/scp/"
-HOST_PREFIX="iz-"
+HOST_PREFIX="nord-ploh-"
 SUBDOMAIN_PREFIX=gw
-VPN_NUMBER=1
-DOMAIN="steinburg.freifunknord.net"
+VPN_NUMBER=0
+DOMAIN="ploh.freifunknord.net"
 SUDOUSERNAME="debian"
 TLD=ffnord
 
@@ -83,7 +83,7 @@ touch /usr/local/bin/online
 cat <<-EOF>> /usr/local/bin/online
 #!/bin/bash
 
-maintenance off && service ntp start && batctl -m bat-ffnord gw server 100000/100000 && check-services
+maintenance off && service ntp start && batctl -m bat-ffnord gw server 500000/500000 && check-services
 EOF
 chmod +x /usr/local/bin/online
 
