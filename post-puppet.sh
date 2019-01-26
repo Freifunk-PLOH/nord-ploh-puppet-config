@@ -1,8 +1,8 @@
 #!/bin/bash
 #https://github.com/ffnord/ffnord-puppet-gateway
 
-VPN_NUMBER=1
-DOMAIN="steinburg.freifunknord.net"
+VPN_NUMBER=0
+DOMAIN="ploh.freifunknord.net"
 TLD=ffnord
 IP6PREFIX=fd42:eb49:c0b5:4242
 
